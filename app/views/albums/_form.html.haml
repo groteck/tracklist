@@ -1,4 +1,5 @@
-= form_for @album do |f|
+= simple_form_for @album do |f|
+ 
   -if @album.errors.any?
     #error_explanation
       %h2= "#{pluralize(@album.errors.count, "error")} prohibited this album from being saved:"
@@ -7,16 +8,13 @@
           %li= msg
 
   .field
-    = f.label :title
-    = f.text_field :title
+    = f.input :title
   .field
-    = f.label :description
-    = f.text_area :description
+    =label_tag "Description:"
+    = f.input :description, label: false
   .field
-    = f.label :tag_id
-    = f.number_field :tag_id
+    = f.input :tag_id
   .field
-    = f.label :author_id
-    = f.number_field :author_id
+    = f.input :author_id
   .actions
     = f.submit 'Save'
