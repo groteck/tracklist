@@ -15,7 +15,7 @@
       %td= album.title
       %td= album.description
       %td= album.tag_id
-      %td= album.author.name
+      %td= link_to album.author.name, author_path(album)
       %td= link_to 'Show', album
       %td= link_to 'Edit', edit_album_path(album)
       %td= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete
