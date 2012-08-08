@@ -11,7 +11,7 @@
   = @album.tag_id
 %p
   %b Author:
-  = @album.author_id
+  = @album.author.name
 
 = link_to 'Edit', edit_album_path(@album)
 \|

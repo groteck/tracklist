@@ -1,4 +1,6 @@
 Tracklist::Application.routes.draw do
+  resources :authors
+
   resources :albums
 
   root :to => 'albums#index'
