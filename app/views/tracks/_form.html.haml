@@ -1,0 +1,12 @@
+= simple_form_for(@track) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :tag_id
+    = f.association :author
+    = f.input :track_number
+    = f.association :album
+
+  .form-actions
+    = f.button :submit

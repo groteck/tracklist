@@ -16,3 +16,22 @@
 = link_to 'Edit', edit_album_path(@album)
 \|
 = link_to 'Back', albums_path
+
+%h1 Listing tracks
+
+%table
+  %tr
+    %th Track number
+    %th Title
+    %th Tag
+    %th
+    %th
+    %th
+
+  - @album.tracks.each do |track|
+    %tr
+      %td= track.track_number
+      %td= link_to track.title, track
+      %td= track.tag_id
+      %td= link_to 'Edit', edit_track_path(track)
+      %td= link_to 'Destroy', track, :confirm => 'Are you sure?', :method => :delete

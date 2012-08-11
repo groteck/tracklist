@@ -1,0 +1,27 @@
+%h1 Listing tracks
+
+%table
+  %tr
+    %th Track number
+    %th Title
+    %th Tag
+    %th Author
+    %th Album
+    %th
+    %th
+    %th
+
+  - @tracks.each do |track|
+    %tr
+      %td= track.track_number
+      %td= track.title
+      %td= track.tag_id
+      %td= link_to track.author.name, author_path(track.author)
+      %td= link_to track.album.title, album_path(track.album)
+      %td= link_to 'Show', track
+      %td= link_to 'Edit', edit_track_path(track)
+      %td= link_to 'Destroy', track, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Track', new_track_path
