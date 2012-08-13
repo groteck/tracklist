@@ -1,4 +1,6 @@
 Tracklist::Application.routes.draw do
+  resources :tags
+
   resources :tracks
 
   resources :authors
