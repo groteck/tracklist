@@ -16,7 +16,6 @@
 %table
   %tr
     %th Title
-    %th Tag
     %th
     %th
     %th
@@ -24,7 +23,6 @@
   - @author.albums.each do |album|
     %tr
       %td= album.title
-      %td= album.tag_id
       %td= link_to 'Show', album
       %td= link_to 'Edit', edit_album_path(album)
       %td= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete

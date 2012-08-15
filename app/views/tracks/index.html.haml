@@ -4,7 +4,6 @@
   %tr
     %th Track number
     %th Title
-    %th Tag
     %th Author
     %th Album
     %th
@@ -15,7 +14,6 @@
     %tr
       %td= track.track_number
       %td= track.title
-      %td= track.tag_id
       %td= link_to track.author.name, author_path(track.author)
       %td= link_to track.album.title, album_path(track.album)
       %td= link_to 'Show', track
