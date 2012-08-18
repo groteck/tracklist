@@ -13,7 +13,7 @@
     =label_tag "Description:"
     = f.input :description, label: false
   .field
-    = f.input :token_inputs
+    = f.input :token_inputs, input_html: { data:{ load: @album.tags} }
   .field
     = f.association :author
   .actions

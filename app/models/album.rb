@@ -6,9 +6,9 @@ class Album < ActiveRecord::Base
   validates :title, :author_id, presence: true
   attr_reader :token_inputs
 
-  def token_inputs=(ids)
-    ids.split(",").each do |id|
-      self.tags << Tag.find(id)
+  def token_inputs=(names)
+    names.split(",").each do |name|
+      self.tags << Tag.find_or_create_by_name(name)
     end      
   end
 end
