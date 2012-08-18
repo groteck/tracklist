@@ -2,7 +2,8 @@
 
 %p
   %b Title:
-  = @album.title
+  = @album.title + " "
+  = tags_links(@album)
 %p
   %b Description:
   = @album.description
@@ -20,7 +21,7 @@
   %tr
     %th Track number
     %th Title
-    %th Tag
+    %th Tags
     %th
     %th
     %th
@@ -29,6 +30,6 @@
     %tr
       %td= track.track_number
       %td= link_to track.title, track
-      %td= track.tag_id
+      %td= tags_links(track)
       %td= link_to 'Edit', edit_track_path(track)
       %td= link_to 'Destroy', track, :confirm => 'Are you sure?', :method => :delete

@@ -14,7 +14,7 @@
     %tr
       %td= album.title
       %td= album.description
-      %td= album.tags.map {|tag| (link_to tag.name,tag)}.join(", ").html_safe
+      %td= tags_links(album)
       %td= link_to album.author.name, author_path(album)
       %td= link_to 'Show', album
       %td= link_to 'Edit', edit_album_path(album)
