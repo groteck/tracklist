@@ -4,4 +4,4 @@
 
 $ ->
   $('#album_token_inputs').tokenInput '/tags.json',
-    {theme: 'facebook', tokenValue: 'name',preventDuplicates: true, prePopulate: $('#album_token_inputs').data('load') }
+    {theme: 'facebook', tokenValue: 'name',preventDuplicates: true, prePopulate: $('#album_token_inputs').data('load')}
