@@ -4,6 +4,7 @@
   .form-inputs
     = f.input :name
     = f.input :description
+    = f.input :token_inputs, label: "Tags:", input_html: { data:{ load: @author.tags} }
 
   .form-actions
     = f.button :submit

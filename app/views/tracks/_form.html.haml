@@ -8,9 +8,10 @@
           %li= msg
 
   .form-inputs
+    = f.input :track_number
     = f.input :title
     = f.association :author
-    = f.input :track_number
+    = f.input :token_inputs, label: "Tags:", input_html: { data:{ load: @track.tags} }
     = f.association :album
 
   .form-actions

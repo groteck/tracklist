@@ -2,14 +2,16 @@
 
 %p
   %b Title:
-  = @album.title + " "
-  = tags_links(@album)
+  = @album.title
 %p
   %b Description:
   = @album.description
 %p
   %b Author:
   = @album.author.name
+%p
+  %b Tags:
+  = tags_links(@album)
 
 = link_to 'Edit', edit_album_path(@album)
 \|

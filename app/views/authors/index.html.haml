@@ -4,6 +4,7 @@
   %tr
     %th Name
     %th Description
+    %th Tags
     %th
     %th
     %th
@@ -12,6 +13,7 @@
     %tr
       %td= author.name
       %td= author.description
+      %td= tags_links(author)
       %td= link_to 'Show', author
       %td= link_to 'Edit', edit_author_path(author)
       %td= link_to 'Destroy', author, :confirm => 'Are you sure?', :method => :delete

@@ -6,6 +6,9 @@
 %p
   %b Description:
   = @author.description
+%p
+  %b Tags:
+  = tags_links(@author)
 
 = link_to 'Edit', edit_author_path(@author)
 \|

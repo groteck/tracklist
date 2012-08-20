@@ -2,13 +2,14 @@
 
 %p
   %b Title:
+  = @track.track_number + " "
   = @track.title
+%p
+  %b Title:
+  =tags_links(@track)
 %p
   %b Author:
   =link_to @track.author.name, author_path(@track.author)
-%p
-  %b Track number:
-  = @track.track_number
 %p
   %b Album:
   = link_to @track.album.title, album_path(@track.album)

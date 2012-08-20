@@ -6,6 +6,7 @@
     %th Title
     %th Author
     %th Album
+    %th Tags
     %th
     %th
     %th
@@ -14,6 +15,7 @@
     %tr
       %td= track.track_number
       %td= track.title
+      %td= tags_links(track)
       %td= link_to track.author.name, author_path(track.author)
       %td= link_to track.album.title, album_path(track.album)
       %td= link_to 'Show', track
