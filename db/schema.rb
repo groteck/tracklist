@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120815132640) do
+ActiveRecord::Schema.define(:version => 20120820233853) do
 
   create_table "albums", :force => true do |t|
     t.string   "title"
@@ -47,8 +47,12 @@ ActiveRecord::Schema.define(:version => 20120815132640) do
     t.integer  "author_id"
     t.integer  "track_number"
     t.integer  "album_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "song_file_name"
+    t.string   "song_content_type"
+    t.integer  "song_file_size"
+    t.datetime "song_updated_at"
   end
 
 end

@@ -3,6 +3,7 @@ class Track < ActiveRecord::Base
   belongs_to :album
   has_many :taglinks, as: :resource
   has_many :tags, through: :taglinks
+  has_attached_file :song
   validates :title, :author_id, :album_id, presence: true
   attr_reader :token_inputs
 

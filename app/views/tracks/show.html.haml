@@ -2,8 +2,14 @@
 
 %p
   %b Title:
-  = @track.track_number + " "
-  = @track.title
+  = @track.track_number 
+  =" " +  @track.title
+%p
+  %b Song:
+  %audio{ :controls => 'controls' }
+    %source{ :src =>"=@track.song.url", :type =>"audio/mp3"}
+
+  
 %p
   %b Title:
   =tags_links(@track)

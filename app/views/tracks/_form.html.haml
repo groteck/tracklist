@@ -1,15 +1,16 @@
 = simple_form_for(@track) do |f|
 
-  -if @album.errors.any?
+  -if @track.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@album.errors.count, "error")} prohibited this album from being saved:"
+      %h2= "#{pluralize(@track.errors.count, "error")} prohibited this album from being saved:"
       %ul
-        - @album.errors.full_messages.each do |msg|
+        - @track.errors.full_messages.each do |msg|
           %li= msg
 
   .form-inputs
     = f.input :track_number
     = f.input :title
+    = f.file_field :song
     = f.association :author
     = f.input :token_inputs, label: "Tags:", input_html: { data:{ load: @track.tags} }
     = f.association :album
