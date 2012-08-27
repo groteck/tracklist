@@ -5,3 +5,4 @@
 $ ->
   $('#track_token_inputs').tokenInput '/tags.json',
     {theme: 'facebook', tokenValue: 'name',preventDuplicates: true, prePopulate: $('#track_token_inputs').data('load')}
+  

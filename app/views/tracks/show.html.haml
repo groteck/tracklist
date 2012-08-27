@@ -6,8 +6,7 @@
   =" " +  @track.title
 %p
   %b Song:
-  %audio{ :controls => 'controls' }
-    %source{ :src =>"=@track.song.url", :type =>"audio/mp3"}
+  = audio_tag(@track.song.url, controls: true)
 
   
 %p
