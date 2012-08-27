@@ -14,7 +14,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'compass-rails'
-  gem 'bootstrap-sass-rails'
+  gem 'bootstrap-sass'
   gem 'rails_tokeninput'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
