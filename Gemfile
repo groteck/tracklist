@@ -27,6 +27,8 @@ gem 'jquery-rails'
 gem 'simple_form'
 #upload files
 gem "paperclip", "~> 3.0"
+#seach engine
+gem 'ransack'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

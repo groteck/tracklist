@@ -2,7 +2,8 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.all
+    @search = Album.search(params[:q])
+    @albums = @search.result
 
     respond_to do |format|
       format.html # index.html.erb

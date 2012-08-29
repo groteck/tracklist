@@ -1,3 +1,14 @@
+= simple_form_for @search, url: albums_path, :method=>'get' do |s|
+  = s.label :title_cont, "Title contains"
+  = s.text_field :title_cont
+  = s.label :description_cont, "Description contains"
+  = s.text_field :description_cont
+  -# = s.input :updated_at_gteq, as: 'date', label: "Date between"
+  -# = s.input :updated_at_lteq, as: 'date', label: "and"
+
+  = s.submit :search
+
+
 %h1 Listing albums
 
 %table
