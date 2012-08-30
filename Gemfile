@@ -14,8 +14,9 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'compass-rails'
-  gem 'bootstrap-sass'
+  gem "bootstrap-sass", :git => 'git://github.com/dszczyt/bootstrap-sass.git'
   gem 'rails_tokeninput'
+  gem 'font-awesome-sass-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'

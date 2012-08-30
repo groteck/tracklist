@@ -5,14 +5,52 @@
     = javascript_include_tag "application" 
     = csrf_meta_tags 
   %body
-  #header
-    #menu
-      %ul
-        %li= link_to "Home", root_path 
-        %li= link_to "Authors", authors_path 
-        %li= link_to "Tracks", tracks_path 
+    .container
+      #header
+        #banner
+          #title
+            Tracklist
+            %i.icon-music
+          .line1
+          .line2
+          .line3
+          .line4
+          .line5
+        #menu.navbar
+          .navbar-inner
+            %ul.nav
+              -if current_page?(controller: 'albums') or current_page?(root_path)
+                %li.active
+                  = link_to root_path do
+                    %i.icon-home
+                    Home
+              -else
+                %li
+                  = link_to root_path do
+                    %i.icon-home
+                    Home
+              -if current_page?(controller: 'authors')
+                %li.active
+                  = link_to authors_path do 
+                    %i.icon-user
+                    Authors
+              -else
+                %li
+                  = link_to authors_path do
+                    %i.icon-user
+                    Authors
+              -if current_page?(controller: 'tracks')
+                %li.active
+                  = link_to tracks_path do 
+                    %i.icon-play
+                    Tracks
+              -else
+                %li
+                  = link_to tracks_path do
+                    %i.icon-play
+                    Tracks
+            = yield :search
 
-  = yield
-  #footer
-    %p
-      fray make this
+      = yield
+      #footer
+        %p fray make this

@@ -1,38 +1,32 @@
-= simple_form_for @search, url: albums_path, :method=>'get' do |s|
-  = s.label :title_cont, "Title contains"
-  = s.text_field :title_cont
-  = s.label :description_cont, "Description contains"
-  = s.text_field :description_cont
-  -# = s.input :updated_at_gteq, as: 'date', label: "Date between"
-  -# = s.input :updated_at_lteq, as: 'date', label: "and"
-
-  = s.submit :search
+-content_for :search do
+  = search_form_for @search, url: albums_path, :method=>'get', html: {class: 'navbar-search pull-right'} do |s|
+    = s.text_field :title_cont, class: 'search-query', placeholder: "Search"
 
 
-%h1 Listing albums
 
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Tags
-    %th Author
-    %th
-    %th
-    %th
-
+%h1 Albums
+%ul.unstyled.albums
   - @albums.each do |album|
-    %tr
-      %td= album.title
-      %td= album.description
-      %td= tags_links(album)
-      %td= link_to album.author.name, author_path(album)
-      %td= link_to 'Show', album
-      %td= link_to 'Edit', edit_album_path(album)
-      %td= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete
+    %li.album.row
+      .title.span5
+        .icon-folder-close
+        = album.title
+        = link_to  album, class: 'btn pull-right' do
+          %i.icon-info-sign
+      .author.span5
+        = link_to author_path(album) do
+          %i.icon-user
+          = album.author.name
+        = link_to  edit_album_path(album), class: 'btn pull-right' do
+          %i.icon-pencil
+      .tags.span5
+        .icon-tags
+        = tags_links(album)
+        = link_to  album, :confirm => 'Are you sure?', :method => :delete, class: 'btn pull-right' do
+          %i.icon-trash
 
 %br
 
-= link_to new_album_path, class: "btn" do
+= link_to new_album_path, class: "btn btn-new" do
   %i.icon-plus
   New Album
