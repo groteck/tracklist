@@ -7,9 +7,16 @@ class Album < ActiveRecord::Base
   attr_reader :token_inputs
 
   def token_inputs=(names)
-    names.split(",").each do |name|
-      name.slice!("New: ")
-      self.tags << Tag.find_or_create_by_name(name.delete('"'))
-    end     
+    if names.present?
+      self.tags.delete_all
+      names.split(",").each do |name|
+        name.slice!("New: ")
+        if self.tags.find_by_name(name.delete('"')).blank?
+          self.tags << Tag.find_or_create_by_name(name.delete('"'))
+        end
+      end     
+    else
+      self.tags.delete_all if self.tags.present?
+    end
   end
 end
